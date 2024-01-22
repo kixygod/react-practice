@@ -1,0 +1,40 @@
+@import './Colors.scss';
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  column-gap: 1rem;
+}
+
+.user-link {
+  text-decoration: none;
+  color: $primary-text-color;
+}
+
+.user-card {
+  width: 50vh;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: $secondary-color;
+  border-radius: 1rem;
+  transition: 0.1s linear;
+}
+
+.user-card:hover {
+  background-color: $tertialy-color;
+}
+
+.user-list > input {
+  width: 50vh;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0px solid;
+  transition: 0.1s linear;
+}
+
+.user-list > input:focus {
+  color: $primary-text-color;
+  border: 2px solid $accent-color;
+  outline: none;
+}
