@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { RingLoader } from 'react-spinners';
 import NavBar from '../components/NavBar';
+import FullUser from '../components/FullUser'
 
 
 const UserInfo = () => {
@@ -33,12 +34,7 @@ const UserInfo = () => {
   return (
     <div>
       <NavBar />
-      <div>
-        <strong>Name:</strong> {user.name}
-      </div>
-      <div>
-        <strong>Username:</strong> {user.username}
-      </div>
+      <FullUser user={user} />
     </div>
   );
 };
