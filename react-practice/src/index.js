@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/Main.scss";
@@ -8,6 +8,9 @@ import NoPage from "./pages/NoPage";
 import UserInfo from "./pages/UserInfo";
 
 export default function App() {
+  useEffect(() => {
+    document.title = "Eremin's practice";
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
