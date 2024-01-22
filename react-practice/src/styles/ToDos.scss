@@ -1,0 +1,10 @@
+@import "./Colors.scss";
+
+input:checked {
+  accent-color: $accent-color;
+}
+
+.todo-body {
+  height: 45%;
+  overflow: auto;
+}

@@ -1,4 +1,5 @@
 import "../styles/FullUser.scss";
+import ToDoList from "../components/ToDoList";
 
 const FullUser = ({ user }) => {
   return (
@@ -39,7 +40,9 @@ const FullUser = ({ user }) => {
           <div>{user.company.bs}</div>
         </div>
       </div>
-      <div className="full-user-child"></div>
+      <div className="full-user-child">
+        <ToDoList userId={user.id} />
+      </div>
     </div>
   );
 };
