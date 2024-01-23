@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/ToDos.scss";
-import ToDo from "../components/ToDo";
+import ToDo from "./ToDo";
 
 const ToDoList = ({ userId }) => {
   const { id } = useParams();
