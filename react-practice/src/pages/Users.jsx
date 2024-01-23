@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import SingleUser from '../components/SingleUser';
 import NavBar from '../components/NavBar';
+import SingleUser from '../components/SingleUser';
+import getUsers from '../services/UserService';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((response) => response.json())
-      .then((data) => setUsers(data))
-      .catch((error) => console.error('Error:', error));
+    const fetchData = async () => {
+      try {
+        const data = await getUsers();
+        setUsers(data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleSearch = (e) => {
@@ -33,8 +40,8 @@ const Users = () => {
           onChange={handleSearch}
         />
         {filteredUsers.map((user) => (
-          <div className='user-card'>
-            <Link key={user.id} to={{ pathname: `/users/${user.id}` }} className='user-link'>
+          <div className='user-card' key={user.id}>
+            <Link to={{ pathname: `/users/${user.id}` }} className='user-link'>
               <SingleUser user={user} />
             </Link>
           </div>

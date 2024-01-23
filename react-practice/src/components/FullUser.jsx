@@ -1,5 +1,7 @@
 import "../styles/FullUser.scss";
 import ToDoList from "../components/ToDoList";
+import { Link } from 'react-router-dom';
+
 
 const FullUser = ({ user }) => {
   return (
@@ -41,6 +43,11 @@ const FullUser = ({ user }) => {
         </div>
       </div>
       <div className="full-user-child">
+      <Link key={user.id} to={{ pathname: `/users/${user.id}/todos` }}>
+        <div className="todo-button">
+          <p>All ToDo</p>
+        </div>
+      </Link>
         <ToDoList userId={user.id} />
       </div>
     </div>
