@@ -34,7 +34,7 @@ const Users = () => {
       <NavBar />
       <div className='user-list'>
         <input
-          type='text'
+          type='search'
           placeholder='Search by name'
           value={searchTerm}
           onChange={handleSearch}

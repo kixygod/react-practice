@@ -15,11 +15,9 @@ const ToDo = ({ todoInfo }) => {
         type="checkbox"
         checked={isChecked}
         onChange={() => {}}
-        onClick={(e) => e.stopPropagation()}
+        onClick={handleToggle}
       />
-      <div>
         {todoInfo.title}
-      </div>
     </div>
   );
 };
