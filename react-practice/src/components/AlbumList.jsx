@@ -21,7 +21,6 @@ const AlbumList = ({ userId }) => {
         }
       }
     };
-
     fetchData();
   }, [id, userId]);
 
@@ -43,7 +42,6 @@ const AlbumList = ({ userId }) => {
         </div>
       ))}
 
-      {/* Модальное окно */}
       <AlbumModal
         albumId={selectedAlbumId}
         isOpen={selectedAlbumId !== null}
