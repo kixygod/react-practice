@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Grid from "@mui/material/Grid";
 import Modal from "react-modal";
 import { useParams } from "react-router-dom";
 import { getAlbumPhotos } from "../services/AlbumService";
@@ -49,14 +50,22 @@ const AlbumModal = ({ albumId, isOpen, onRequestClose }) => {
       className="modal"
       overlayClassName="modal-overlay"
     >
-      {albumPhotos.map((photo) => (
-        <div className="modal-column">
-          <div className="modal-item">
-            <h2>{photo.title}</h2>
-            <img src={photo.url} alt={photo.title} />
-          </div>
-        </div>
-      ))}
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="center"
+      >
+        {albumPhotos.map((photo) => (
+          <Grid item xs={2} sm={4} md={4} key={photo.id}>
+            <div className="modal-item">
+              <img src={photo.thumbnailUrl} alt={photo.title} />
+            </div>
+          </Grid>
+        ))}
+      </Grid>
     </Modal>
   );
 };

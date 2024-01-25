@@ -6,7 +6,8 @@ import Users from "./pages/Users";
 import Main from "./pages/Main";
 import NoPage from "./pages/NoPage";
 import UserInfo from "./pages/UserInfo";
-import ToDoPage from './pages/ToDoPage';
+import ToDoPage from "./pages/ToDoPage";
+import AlbumPage from "./pages/AlbumPage";
 
 export default function App() {
   useEffect(() => {
@@ -18,7 +19,8 @@ export default function App() {
         <Route path="/" element={<Main />} />
         <Route path="users" element={<Users />} />
         <Route path="/users/:id" element={<UserInfo />} />
-        <Route path="users/:id/todos" element={<ToDoPage/>} />
+        <Route path="users/:id/todos" element={<ToDoPage />} />
+        <Route path="albums/:id/photos" element={<AlbumPage />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
