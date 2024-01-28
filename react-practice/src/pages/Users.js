@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import SingleUser from '../components/SingleUser';
-import NavBar from '../components/NavBar';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import SingleUser from "../components/SingleUser";
+import NavBar from "../components/NavBar";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data) => setUsers(data))
-      .catch((error) => console.error('Error:', error));
+      .catch((error) => console.error("Error:", error));
   }, []);
 
   const handleSearch = (e) => {
@@ -25,16 +25,20 @@ const Users = () => {
   return (
     <div>
       <NavBar />
-      <div className='user-list'>
+      <div className="user-list">
         <input
-          type='text'
-          placeholder='Search by name'
+          type="text"
+          placeholder="Search by name"
           value={searchTerm}
           onChange={handleSearch}
         />
         {filteredUsers.map((user) => (
-          <div className='user-card'>
-            <Link key={user.id} to={{ pathname: `/users/${user.id}` }} className='user-link'>
+          <div className="user-card">
+            <Link
+              key={user.id}
+              to={{ pathname: `/users/${user.id}` }}
+              className="user-link"
+            >
               <SingleUser user={user} />
             </Link>
           </div>
@@ -42,6 +46,6 @@ const Users = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Users;
