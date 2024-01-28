@@ -1,4 +1,5 @@
-import NavBar from "../components/NavBar";
+import NavBar from '../components/NavBar';
+
 
 const Main = () => {
   return (
@@ -7,6 +8,6 @@ const Main = () => {
       <h1>Main Page</h1>
     </div>
   );
-};
+}
 
 export default Main;

@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/Users.scss";
+import React from 'react';
+import '../styles/Users.scss';
 
 const SingleUser = ({ user }) => {
   return (
@@ -17,6 +17,7 @@ const SingleUser = ({ user }) => {
         <strong>Phone:</strong> {user.phone}
       </div>
     </div>
+
   );
 };
 
