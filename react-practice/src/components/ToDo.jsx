@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import '../styles/ToDos.scss';
-import '../styles/Main.scss';
+import React, { useState } from "react";
+import "../styles/ToDos.scss";
+import "../styles/Main.scss";
 
 const ToDo = ({ todoInfo }) => {
   const [isChecked, setIsChecked] = useState(todoInfo.completed);
@@ -10,14 +10,17 @@ const ToDo = ({ todoInfo }) => {
   };
 
   return (
-    <div className={`todo-item ${isChecked ? 'completed' : ''}`} onClick={handleToggle}>
+    <div
+      className={`todo-item ${isChecked ? "completed" : ""}`}
+      onClick={handleToggle}
+    >
       <input
         type="checkbox"
         checked={isChecked}
         onChange={() => {}}
         onClick={handleToggle}
       />
-        {todoInfo.title}
+      {todoInfo.title}
     </div>
   );
 };

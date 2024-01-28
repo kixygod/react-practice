@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import NavBar from '../components/NavBar';
-import SingleUser from '../components/SingleUser';
-import getUsers from '../services/UserService';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import NavBar from "../components/NavBar";
+import SingleUser from "../components/SingleUser";
+import getUsers from "../services/UserService";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +14,7 @@ const Users = () => {
         const data = await getUsers();
         setUsers(data);
       } catch (error) {
-        console.error('Error:', error);
+        console.error("Error:", error);
       }
     };
 
@@ -32,16 +32,16 @@ const Users = () => {
   return (
     <div>
       <NavBar />
-      <div className='user-list'>
+      <div className="user-list">
         <input
-          type='search'
-          placeholder='Search by name'
+          type="search"
+          placeholder="Search by name"
           value={searchTerm}
           onChange={handleSearch}
         />
         {filteredUsers.map((user) => (
-          <div className='user-card' key={user.id}>
-            <Link to={{ pathname: `/users/${user.id}` }} className='user-link'>
+          <div className="user-card" key={user.id}>
+            <Link to={{ pathname: `/users/${user.id}` }} className="user-link">
               <SingleUser user={user} />
             </Link>
           </div>
@@ -49,6 +49,6 @@ const Users = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Users;
